@@ -1,0 +1,44 @@
+curl "http://localhost:9090/nobelprize/laureate/272232323"
+
+curl "http://localhost:9090/nobelprize/laureates?category=literature" 
+
+curl "http://localhost:9090/nobelprize/laureates?year=2005&category=literature" 
+
+curl "http://localhost:9090/nobelprize/laureate/1009"
+
+curl "http://localhost:9090/nobelprize/laureates?name=Mary"
+
+curl "http://localhost:9090/nobelprize/laureates?name=curie"
+
+curl "http://localhost:9090/nobelprize/laureates?name=Marie%20Curie"
+
+curl -X POST -H "Content-Type: application/json" \
+   -d '{
+    "id": "",
+    "firstname": "Dakshitha",
+    "surname": "Ratnayake",
+    "gender": "female",
+    "country": "Sri Lanka",
+    "isAlive": true,
+    "prizes": [
+      {
+        "year": "2042",
+        "category": "Physics",
+        "share": "0",
+        "motivation": "\"for inventing time travel\"",
+        "affiliations": [
+          {
+            "name": "University of Colombo",
+            "city": "Colombo",
+            "country": "Sri Lanka"
+          }
+        ]
+      }
+    ]
+  }
+' \
+   http://localhost:9090/nobelprize/laureate/
+
+
+
+curl "http://localhost:9090/nobelprize/laureates" |jq

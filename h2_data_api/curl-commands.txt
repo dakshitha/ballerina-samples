@@ -1,0 +1,11 @@
+curl http://localhost:9090/tv_characters/top10
+
+curl -X POST -H "Content-Type: application/json" \
+   -d'{
+  "id": 0,
+  "firstName": "Rachel",
+  "lastName": "Green",
+  "tvShow": "Friends",
+  "voteCount": 24000
+  }' \http://localhost:9090/tv_characters/character/
+
